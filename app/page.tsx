@@ -1,12 +1,29 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+
 export default function Home() {
+  const router = useRouter();
+
   return (
     <main style={styles.container}>
       <h1 style={styles.title}>SÉLECTIONNEZ VOTRE ÉTABLISSEMENT</h1>
 
-      <button style={styles.button}>GLOBAL</button>
-      <button style={styles.button}>A FLEURS DE POT</button>
-      <button style={styles.button}>COCOTALYS</button>
-      <button style={styles.button}>FLORAPHILE</button>
+      <button style={styles.button} onClick={() => router.push("/global")}>
+        GLOBAL
+      </button>
+
+      <button style={styles.button} onClick={() => router.push("/afleursdepot")}>
+        A FLEURS DE POT
+      </button>
+
+      <button style={styles.button} onClick={() => router.push("/cocotalys")}>
+        COCOTALYS
+      </button>
+
+      <button style={styles.button} onClick={() => router.push("/floraphile")}>
+        FLORAPHILE
+      </button>
     </main>
   );
 }
